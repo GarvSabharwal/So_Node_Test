@@ -11,7 +11,7 @@ module.exports = {
 			if (err) {
 				callback({ info: "Error while writing file" });
 			} else {
-				callback({ info: "Result saved in file output_user_story_1.txt in routes folder"});
+				callback({ info: "Result saved in file output_user_story_1.txt in Server-Controllers folder"});
 			}
 		})
 	}
@@ -42,19 +42,19 @@ var convertIntoDigits = function convertIntoDigits(invoice_numbers) {
 
 	}
 
-	var line;
-	var line_number = 0;
-	var lines = []
-	var number = [];
-	var result = "";
+	let line;
+	let line_number = 0;
+	let lines = []
+	let number = [];
+	let result = "";
 	while (line = invoice_numbers.next()) {
 
 		lines[line_number] = line.toString('ascii');
 
 		line_number++;
 		if (line_number > 2) {
-			for (var i = 0; i < lines.length; i++) {
-				for (var j = 0; j < lines[i].length / 3; j++) {
+			for (let i = 0; i < lines.length; i++) {
+				for (let j = 0; j < lines[i].length / 3; j++) {
 
 
 					if (!number[j]) {
@@ -68,7 +68,7 @@ var convertIntoDigits = function convertIntoDigits(invoice_numbers) {
 
 			var number_line = '';
 
-			for (var i = 0; i < number.length; i++) {
+			for (let i = 0; i < number.length; i++) {
 
 				number_line = number_line + digits[number[i]];
 			}
